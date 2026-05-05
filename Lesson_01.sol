@@ -1,5 +1,8 @@
 pragma solidity >=0.5.0 <0.6.0;
 contract ZombieFactory{
+
+    event NewZombie( uint _zombieId, string _name, uint _dna);
+
     uint dnaDigits = 16;
     uint dnaModulus = 16 ** dnaDigits;
 
@@ -10,7 +13,8 @@ contract ZombieFactory{
 
     Zombie[] public zombie
     function _createZombie (string memory _name, uint _dna) private {
-        zombies.push(Zombie(_name, _dna));
+        uint id = zombies.push(Zombie(_name, _dna)) -1;
+        emit NewZombie(id, _name, _dna)
     }
 
     function _generateRandomDna(string memory _str) private view returns (uint) {
