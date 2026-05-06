@@ -14,6 +14,7 @@ contract ZombieFactory{
 
     Zombie[] public zombie
 
+    #mapping to store zombie ownership
     mapping (uint => address) public zombieToOwner;
     mapping (address => uint) ownerZombieCount;
 
