@@ -4,8 +4,8 @@ import "./zombiefactory.sol";
 
 contract ZombieFeeding is ZombieFactory {
 
-    function feedAndMultiply (uint _zombieID, uint _targetDna) public{
-        
+    function feedAndMultiply (uint _zombieId, uint _targetDna) public{
+        require(msg.sender==zombieId)
     }
-    
+
 }
