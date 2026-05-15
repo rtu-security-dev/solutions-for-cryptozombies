@@ -1,6 +1,6 @@
 pragma solidity >=0.5.0 <0.6.0;
 
-import "./Lesson_03.sol";
+import "./zombiefactory.sol";
 
 contrcat KittyInterface {
     function getKitty(uint256 _id) external view returns (
