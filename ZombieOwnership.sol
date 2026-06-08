@@ -14,7 +14,6 @@ contract ZombieOwnership is ZombieAttack, ERC721{
     function ownerOf(uint256 _tokenId) external view returns (address) {
         return zombieToOwner[_tokenId];
     }
-}
 
     function _transfer(address _from, address _to, uint256 _tokenId) private{
         ownerZombieCount[_to]++;
@@ -27,3 +26,4 @@ contract ZombieOwnership is ZombieAttack, ERC721{
         require (zombieToOwner[_tokenId] == msg.sender || zombieApprovals[_tokenId] == msg.sender);
         _transfer(_from, _to, _tokenId);
     }
+}
